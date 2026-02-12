@@ -16,6 +16,20 @@ export default component$(() => {
     <QwikCityProvider>
       <head>
         <meta charset="utf-8" />
+        {/* Set theme class before paint to avoid flash */}
+        <script
+          dangerouslySetInnerHTML={`
+            (() => {
+              try {
+                const stored = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const theme = stored || (prefersDark ? 'dark' : 'light');
+                if (theme === 'dark') document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+              } catch (e) {}
+            })();
+          `}
+        />
         {!isDev && (
           <link
             rel="manifest"
