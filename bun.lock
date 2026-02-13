@@ -3,6 +3,9 @@
   "workspaces": {
     "": {
       "name": "my-qwik-empty-starter",
+      "dependencies": {
+        "qwik-speak": "^0.24.0",
+      },
       "devDependencies": {
         "@builder.io/qwik": "^1.19.0",
         "@builder.io/qwik-city": "^1.19.0",
@@ -915,6 +918,8 @@
     "punycode": ["punycode@2.3.1", "", {}, "sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg=="],
 
     "queue-microtask": ["queue-microtask@1.2.3", "", {}, "sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A=="],
+
+    "qwik-speak": ["qwik-speak@0.24.0", "", { "peerDependencies": { "@builder.io/qwik": ">=1.5.5" }, "bin": { "qwik-speak-extract": "extract/cli.js" } }, "sha512-ZYhb5ZjHmLZX40xw/pTciyHvPAR0uKQKnoyD5XEYZsIfLNsJb22m/Ct3/FuGbiJQ3o2HkgRmC+mj8sd8SjdELg=="],
 
     "readdirp": ["readdirp@4.1.2", "", {}, "sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg=="],
 

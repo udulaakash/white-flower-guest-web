@@ -1,0 +1,273 @@
+{
+  "app": {
+    "nav": {
+      "home": "Home",
+      "rooms": "Rooms",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "theme": { "light": "Light", "dark": "Dark" },
+    "aria": { "toggleDark": "Toggle dark mode", "toggleMenu": "Toggle menu" },
+    "home": {
+      "hero": {
+        "title": "Welcome to White Flower Guest",
+        "subtitle": "Experience the perfect blend of comfort and tropical charm in the heart of Unawatuna, Sri Lanka",
+        "viewRooms": "View Our Rooms",
+        "bookWhatsApp": "Book via WhatsApp"
+      },
+      "ourRooms": "Our Rooms",
+      "ourRoomsIntro": "Choose from our selection of comfortable rooms, each designed to provide a relaxing tropical retreat",
+      "viewAllRooms": "View All Rooms",
+      "ourServices": "Our Services",
+      "ourServicesIntro": "Enhance your stay with our range of services, from airport transfers to exciting tours and adventures",
+      "viewAllServices": "View All Services",
+      "gallery": "Gallery",
+      "galleryIntro": "Take a closer look at White Flower Guest and its cozy tropical surroundings.",
+      "whyChoose": "Why Choose White Flower Guest?",
+      "primeLocation": "Prime Location",
+      "locationText": "Just steps away from the beautiful Unawatuna Beach",
+      "excellentReviews": "Excellent Reviews",
+      "reviewsText": "Rated \"Wonderful\" 9.0/10 by our guests. Experience the hospitality that keeps guests coming back",
+      "comfortableStay": "Comfortable Stay",
+      "comfortText": "Clean, comfortable rooms with traditional charm and modern amenities",
+      "guestQuote": "\"Great place with very friendly hosts. Late check-in at 23:00 was no issue at all, which we really appreciated.\"",
+      "guestAuthor": "— Susan, Germany"
+    },
+    "bookingCta": {
+      "title": "Ready to Book Your Stay?",
+      "subtitle": "Check availability on Booking.com or contact us directly via WhatsApp for personalized service",
+      "checkAvailability": "Check Availability on Booking.com",
+      "bookWhatsApp": "Book via WhatsApp",
+      "directNote": "Direct bookings via WhatsApp may include special offers and personalized service"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch with us for bookings, inquiries, or any questions",
+      "address": "Address",
+      "contactMethods": "Contact Methods",
+      "readyToBook": "Ready to Book?",
+      "readySubtitle": "Check availability on Booking.com or contact us directly via WhatsApp",
+      "bookBooking": "Book on Booking.com",
+      "contactWhatsApp": "Contact via WhatsApp"
+    },
+    "footer": {
+      "quickLinks": "Quick Links",
+      "contactUs": "Contact Us",
+      "bookBooking": "Book on Booking.com",
+      "copyright": "All rights reserved."
+    },
+    "rooms": {
+      "title": "Our Rooms",
+      "intro": "Choose from our selection of comfortable rooms, each designed to provide a relaxing tropical retreat",
+      "roomAvailable": "Room Available",
+      "roomsAvailable": "Rooms Available",
+      "capacity": "Capacity",
+      "size": "Size",
+      "roomsAvailableLabel": "Rooms Available",
+      "roomFeatures": "Room Features",
+      "checkAvailability": "Check Availability on Booking.com",
+      "viewAllRooms": "View All Rooms",
+      "roomNotFound": "Room Not Found",
+      "roomNotFoundText": "The room you're looking for doesn't exist.",
+      "loading": "Loading..."
+    },
+    "services": {
+      "title": "Our Services",
+      "intro": "Enhance your stay with our range of services, from airport transfers to exciting tours and adventures",
+      "popularServices": "Popular Services",
+      "popularIntro": "Our most requested services to make your stay more convenient and memorable",
+      "allServices": "All Services",
+      "popularBadge": "Popular Service",
+      "about": "About",
+      "whatsIncluded": "What's Included",
+      "pricing": "Pricing",
+      "bookWhatsApp": "Book via WhatsApp",
+      "checkRooms": "Check Room Availability on Booking.com",
+      "viewAllServices": "View All Services",
+      "serviceNotFound": "Service Not Found",
+      "serviceNotFoundText": "The service you're looking for doesn't exist."
+    },
+    "card": {
+      "room": "Room",
+      "rooms": "Rooms",
+      "viewDetails": "View Details",
+      "popular": "Popular",
+      "learnMore": "Learn More"
+    },
+    "head": {
+      "homeTitle": "White Flower Guest - Unawatuna Beach Accommodation",
+      "homeDescription": "White Flower Guest offers comfortable accommodation very close to Unawatuna Beach, Sri Lanka. Book your stay and explore our rooms, airport transfers, tours, diving, and boat safari services.",
+      "roomsTitle": "Rooms - White Flower Guest",
+      "roomsDescription": "Browse our selection of rooms at White Flower Guest: Budget Double, Standard Double, Deluxe Double, and Modern Deluxe rooms. All rooms feature traditional charm and modern comfort.",
+      "servicesTitle": "Services - White Flower Guest",
+      "servicesDescription": "Book airport transfers, tours, diving, and boat safari services at White Flower Guest. Convenient and professional services to enhance your stay in Unawatuna.",
+      "contactTitle": "Contact Us - White Flower Guest",
+      "contactDescription": "Contact White Flower Guest in Unawatuna, Sri Lanka. Book your stay via WhatsApp or Booking.com. We're here to help with your accommodation needs.",
+      "roomNotFoundTitle": "Room Not Found - White Flower Guest",
+      "serviceNotFoundTitle": "Service Not Found - White Flower Guest"
+    }
+  },
+  "contact": {
+    "beachProximity": "Very close to Unawatuna Beach"
+  },
+  "rooms": {
+    "modern-deluxe-cozy": {
+      "name": "Modern Deluxe Cozy Room",
+      "description": "Our most premium accommodation option, featuring modern amenities while maintaining the tropical charm. These spacious rooms combine contemporary comfort with traditional Sri Lankan design elements, offering the ultimate beachside retreat experience.",
+      "capacity": "2 guests",
+      "size": "Approx. 25 m²",
+      "feature0": "Double or twin beds",
+      "feature1": "Air Conditioner",
+      "feature2": "Private bathroom",
+      "feature3": "Fan",
+      "feature4": "Modern amenities",
+      "feature5": "Premium furnishings",
+      "feature6": "Spacious layout",
+      "feature7": "Decorative elements",
+      "feature8": "Close to beach access",
+      "feature9": "Enhanced comfort"
+    },
+    "modern-deluxe": {
+      "name": "Modern Deluxe Room",
+      "description": "Our most premium accommodation option, featuring modern amenities while maintaining the tropical charm. These spacious rooms combine contemporary comfort with traditional Sri Lankan design elements, offering the ultimate beachside retreat experience.",
+      "capacity": "2 guests",
+      "size": "Approx. 25 m²",
+      "feature0": "Double or twin beds",
+      "feature1": "Air Conditioner",
+      "feature2": "Private bathroom",
+      "feature3": "Fan",
+      "feature4": "Modern amenities",
+      "feature5": "Premium furnishings",
+      "feature6": "Spacious layout",
+      "feature7": "Decorative elements",
+      "feature8": "Close to beach access",
+      "feature9": "Enhanced comfort"
+    },
+    "modern-deluxe-family": {
+      "name": "Modern Deluxe Family Room",
+      "description": "Our most premium accommodation option, featuring modern amenities while maintaining the tropical charm. These spacious rooms combine contemporary comfort with traditional Sri Lankan design elements, offering the ultimate beachside retreat experience.",
+      "capacity": "3 guests",
+      "size": "Approx. 25 m²",
+      "feature0": "Double or twin beds",
+      "feature1": "Air Conditioner",
+      "feature2": "Private bathroom",
+      "feature3": "Fan",
+      "feature4": "Modern amenities",
+      "feature5": "Premium furnishings",
+      "feature6": "Spacious layout",
+      "feature7": "Decorative elements",
+      "feature8": "Close to beach access",
+      "feature9": "Enhanced comfort"
+    },
+    "deluxe-double": {
+      "name": "Deluxe Double Room",
+      "description": "Our deluxe double rooms offer enhanced comfort with larger spaces, premium furnishings, and thoughtful touches. These rooms feature traditional four-poster beds, elegant decor, and provide a perfect blend of comfort and tropical aesthetics.",
+      "capacity": "2 guests",
+      "size": "Approx. 22 m²",
+      "feature0": "Double bed with mosquito net",
+      "feature1": "Air Conditioner",
+      "feature2": "Private bathroom",
+      "feature3": "Fan",
+      "feature4": "Premium linens",
+      "feature5": "Wooden furniture",
+      "feature6": "Decorative accents",
+      "feature7": "More spacious",
+      "feature8": "Close to beach access"
+    },
+    "standard-double": {
+      "name": "Standard Double Room",
+      "description": "Spacious standard double rooms with traditional wooden furniture and white mosquito nets. These rooms offer comfort and convenience, featuring natural wood accents and bright, airy spaces that capture the essence of tropical living.",
+      "capacity": "2 guests",
+      "size": "Approx. 18 m²",
+      "feature0": "Double bed with mosquito net",
+      "feature1": "Air Conditioner",
+      "feature2": "Private bathroom",
+      "feature3": "Fan",
+      "feature4": "Wooden furniture",
+      "feature5": "Mirror and side table",
+      "feature6": "Clean, bright interior",
+      "feature7": "Close to beach access"
+    },
+    "budget-double": {
+      "name": "Budget Double Room",
+      "description": "A comfortable and affordable double room perfect for budget-conscious travelers. Features a traditional four-poster bed with mosquito net, essential amenities, and a clean, simple design that reflects the tropical charm of Unawatuna.",
+      "capacity": "2 guests",
+      "size": "Approx. 15 m²",
+      "feature0": "Double bed with mosquito net",
+      "feature1": "Private bathroom",
+      "feature2": "Fan",
+      "feature3": "Clean linens",
+      "feature4": "Basic amenities",
+      "feature5": "Close to beach access"
+    }
+  },
+  "services": {
+    "airport-transfers": {
+      "name": "Airport Transfers",
+      "description": "Convenient and comfortable airport pickup and drop-off services. Start and end your journey stress-free with our reliable transportation.",
+      "detailedDescription": "We offer professional airport transfer services to and from Bandaranaike International Airport (CMB) in Colombo. Our experienced drivers will ensure you have a comfortable and safe journey. Whether you're arriving or departing, we'll be there to assist you with your luggage and provide a smooth transfer experience. Book in advance to secure your preferred time slot.",
+      "pricing": "18,000 LKR per vehicle",
+      "feature0": "Pickup from Bandaranaike International Airport",
+      "feature1": "Drop-off to airport",
+      "feature2": "Comfortable vehicles",
+      "feature3": "Experienced drivers",
+      "feature4": "Luggage assistance",
+      "feature5": "Flexible timing",
+      "feature6": "Competitive rates"
+    },
+    "one-day-tours": {
+      "name": "One Day Tours",
+      "description": "Explore the best of Sri Lanka with our curated one-day tour packages. Perfect for making the most of your stay in Unawatuna.",
+      "detailedDescription": "Discover the beauty and culture of Sri Lanka with our carefully designed one-day tours. From ancient temples and tea plantations to wildlife safaris and cultural experiences, we offer a variety of tours that showcase the best of what Sri Lanka has to offer. All tours include transportation, guide services, and can be customized to your interests.",
+      "pricing": "Starting from $XX per person",
+      "feature0": "Galle Fort exploration",
+      "feature1": "Tea plantation visits",
+      "feature2": "Temple tours",
+      "feature3": "Wildlife experiences",
+      "feature4": "Cultural sites",
+      "feature5": "Professional guides",
+      "feature6": "Transportation included",
+      "feature7": "Customizable itineraries"
+    },
+    "multiple-tours": {
+      "name": "Multiple Day Tours",
+      "description": "Extended multi-day tour packages covering Sri Lanka's most iconic destinations. Perfect for travelers who want to see more of this beautiful island.",
+      "detailedDescription": "Experience the diversity of Sri Lanka with our multi-day tour packages. Visit the Cultural Triangle, explore hill country, go on wildlife safaris, and discover hidden gems across the island. Our packages include accommodation, transportation, meals, and expert guides to ensure you have an unforgettable journey.",
+      "pricing": "Contact us for package pricing",
+      "feature0": "2-7 day packages",
+      "feature1": "Cultural Triangle tours",
+      "feature2": "Hill country exploration",
+      "feature3": "Wildlife safaris",
+      "feature4": "Accommodation included",
+      "feature5": "Meals included",
+      "feature6": "Expert guides",
+      "feature7": "Flexible itineraries"
+    },
+    "diving": {
+      "name": "Diving Services",
+      "description": "Explore the underwater world of Unawatuna with our professional diving services. Suitable for both beginners and experienced divers.",
+      "detailedDescription": "Unawatuna offers excellent diving opportunities with its clear waters and diverse marine life. We provide diving services including equipment rental, guided dives, and PADI certification courses. Whether you're a first-time diver or looking to explore deeper waters, our certified instructors will ensure a safe and memorable diving experience.",
+      "pricing": "Contact us for dive packages",
+      "feature0": "Equipment rental",
+      "feature1": "Guided dives",
+      "feature2": "PADI certification courses",
+      "feature3": "Beginner-friendly",
+      "feature4": "Experienced instructors",
+      "feature5": "Multiple dive sites",
+      "feature6": "Safety equipment included"
+    },
+    "boat-safari": {
+      "name": "Boat Safari",
+      "description": "Experience the natural beauty of Sri Lanka's waterways with our exciting boat safari tours. Perfect for wildlife enthusiasts and nature lovers.",
+      "detailedDescription": "Join us for an unforgettable boat safari experience through Sri Lanka's rivers and lagoons. Spot diverse birdlife, crocodiles, and other wildlife while enjoying the serene beauty of the waterways. Our boat safaris are conducted by experienced guides who will help you identify the local flora and fauna. Ideal for photography enthusiasts and nature lovers.",
+      "pricing": "Contact us for safari pricing",
+      "feature0": "Wildlife spotting",
+      "feature1": "Bird watching",
+      "feature2": "Photography opportunities",
+      "feature3": "Experienced guides",
+      "feature4": "Safe boats",
+      "feature5": "Multiple safari options",
+      "feature6": "Morning and evening tours"
+    }
+  }
+}

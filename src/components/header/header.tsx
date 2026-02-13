@@ -1,7 +1,9 @@
 import { component$, useSignal, useVisibleTask$, $ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
+import { inlineTranslate } from "qwik-speak";
 
 export default component$(() => {
+  const t = inlineTranslate();
   const location = useLocation();
   const isMenuOpen = useSignal(false);
   const theme = useSignal<"light" | "dark">("light");
@@ -34,26 +36,36 @@ export default component$(() => {
     else document.documentElement.classList.remove("dark");
   });
 
+  const locale = location.params.locale;
+  const base = locale ? `/${locale}` : "";
+
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/rooms", label: "Rooms" },
-    { href: "/services", label: "Services" },
-    { href: "/contact", label: "Contact" },
+    { href: base || "/", label: t("app.nav.home@@Home") },
+    { href: `${base}/rooms`, label: t("app.nav.rooms@@Rooms") },
+    { href: `${base}/services`, label: t("app.nav.services@@Services") },
+    { href: `${base}/contact`, label: t("app.nav.contact@@Contact") },
   ];
 
   const isActive = (href: string) => {
-    if (href === "/") {
-      return location.url.pathname === "/";
+    if (href === base || href === base + "/") {
+      return location.url.pathname === base || location.url.pathname === base + "/";
     }
     return location.url.pathname.startsWith(href);
   };
+
+  const pathname = location.url.pathname;
+  const otherLang = locale === "ru" ? "en" : "ru";
+  const switchPath =
+    locale && pathname.startsWith(`/${locale}`)
+      ? pathname.replace(new RegExp(`^/${locale}`), `/${otherLang}`) || `/${otherLang}`
+      : `/${otherLang}`;
 
   return (
     <header class="sticky top-0 z-50 bg-white/90 shadow-md backdrop-blur dark:bg-[#041f1a]/90 dark:shadow-black/30">
       <div class="container mx-auto px-4">
         <div class="flex h-20 items-center justify-between">
           {/* Logo */}
-          <Link href="/" class="flex items-center space-x-2">
+          <Link href={base || "/"} class="flex items-center space-x-2">
             <div class="text-2xl font-bold text-[#008060]">
               White Flower Guest
             </div>
@@ -76,27 +88,42 @@ export default component$(() => {
             ))}
           </nav>
 
-          {/* Theme toggle (desktop) */}
-          <button
-            type="button"
-            class="hidden items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:border-gray-300 hover:bg-gray-50 md:inline-flex dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:hover:bg-white/10"
-            onClick$={toggleTheme}
-            aria-label="Toggle dark mode"
-          >
-            <span class="text-base">
-              {theme.value === "dark" ? "🌙" : "☀️"}
-            </span>
-            <span>{theme.value === "dark" ? "Dark" : "Light"}</span>
-          </button>
+          {/* Language switcher + Theme toggle (desktop) */}
+          <div class="hidden items-center gap-2 md:flex">
+            <a
+              href={switchPath}
+              class="rounded-full px-3 py-1.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-white/10"
+              aria-label="Switch language"
+            >
+              {locale === "ru" ? "EN" : "RU"}
+            </a>
+            <button
+              type="button"
+              class="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm transition hover:border-gray-300 hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-gray-200 dark:hover:bg-white/10"
+              onClick$={toggleTheme}
+              aria-label={t("app.aria.toggleDark@@Toggle dark mode")}
+            >
+              <span class="text-base">
+                {theme.value === "dark" ? "🌙" : "☀️"}
+              </span>
+              <span>{theme.value === "dark" ? t("app.theme.dark@@Dark") : t("app.theme.light@@Light")}</span>
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <div class="flex items-center gap-2 md:hidden">
-            {/* Theme toggle (mobile) */}
+            <a
+              href={switchPath}
+              class="rounded-md p-2 text-sm font-medium text-gray-700 hover:text-[#008060] dark:text-gray-200 dark:hover:text-[#36CFC9]"
+              aria-label="Switch language"
+            >
+              {locale === "ru" ? "EN" : "RU"}
+            </a>
             <button
               type="button"
               class="rounded-md p-2 text-gray-700 hover:text-[#008060] focus:outline-none dark:text-gray-200 dark:hover:text-[#36CFC9]"
               onClick$={toggleTheme}
-              aria-label="Toggle dark mode"
+              aria-label={t("app.aria.toggleDark@@Toggle dark mode")}
             >
               <span class="text-lg">
                 {theme.value === "dark" ? "🌙" : "☀️"}
@@ -107,7 +134,7 @@ export default component$(() => {
               type="button"
               class="rounded-md p-2 text-gray-700 hover:text-[#008060] focus:outline-none dark:text-gray-200 dark:hover:text-[#36CFC9]"
               onClick$={toggleMenu}
-              aria-label="Toggle menu"
+              aria-label={t("app.aria.toggleMenu@@Toggle menu")}
             >
               <svg
                 class="h-6 w-6"

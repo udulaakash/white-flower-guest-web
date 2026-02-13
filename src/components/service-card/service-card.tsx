@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
+import { inlineTranslate } from "qwik-speak";
 import type { Service } from "~/config/services";
 
 interface ServiceCardProps {
@@ -8,7 +9,13 @@ interface ServiceCardProps {
 }
 
 export default component$(({ service, highlight = false }: ServiceCardProps) => {
+  const t = inlineTranslate();
+  const location = useLocation();
+  const locale = location.params.locale;
+  const base = locale ? `/${locale}` : "";
   const mainImage = service.images?.[0] || "/images/placeholder-service.jpg";
+  const name = t(`services.${service.id}.name@@${service.name}`);
+  const description = t(`services.${service.id}.description@@${service.description}`);
 
   return (
     <div
@@ -16,17 +23,16 @@ export default component$(({ service, highlight = false }: ServiceCardProps) => 
         highlight ? "ring-2 ring-[#36CFC9] ring-offset-2 dark:ring-offset-[#041f1a]" : ""
       }`}
     >
-      {/* Image */}
       <div class="relative h-48 overflow-hidden">
         <img
           src={mainImage}
-          alt={service.name}
+          alt={name}
           class="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
           loading="lazy"
         />
         {highlight && (
           <div class="absolute top-4 left-4 bg-[#008060] text-white px-3 py-1 rounded-full text-sm font-semibold">
-            Popular
+            {t("app.card.popular@@Popular")}
           </div>
         )}
         {service.icon && (
@@ -36,40 +42,36 @@ export default component$(({ service, highlight = false }: ServiceCardProps) => 
         )}
       </div>
 
-      {/* Content */}
       <div class="p-6">
-        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">{service.name}</h3>
-        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{service.description}</p>
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">{name}</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">{description}</p>
 
-        {/* Features */}
         {service.features && service.features.length > 0 && (
           <div class="mb-4">
             <ul class="space-y-2">
-              {service.features.slice(0, 3).map((feature) => (
-                <li key={feature} class="flex items-start space-x-2 text-sm text-gray-600 dark:text-gray-300">
+              {service.features.slice(0, 3).map((_, i) => (
+                <li key={i} class="flex items-start space-x-2 text-sm text-gray-600 dark:text-gray-300">
                   <span class="text-[#008060] mt-1">✓</span>
-                  <span>{feature}</span>
+                  <span>{t(`services.${service.id}.feature${i}@@${service.features![i] ?? ""}`)}</span>
                 </li>
               ))}
             </ul>
           </div>
         )}
 
-        {/* Pricing */}
         {service.pricing && (
-          <p class="text-[#008060] font-semibold mb-4">{service.pricing}</p>
+          <p class="text-[#008060] font-semibold mb-4">{t(`services.${service.id}.pricing@@${service.pricing}`)}</p>
         )}
 
-        {/* CTA */}
         <Link
-          href={`/services/${service.id}`}
+          href={`${base}/services/${service.id}`}
           class={`block w-full text-center py-3 rounded-lg font-semibold transition-colors ${
             highlight
               ? "bg-[#008060] hover:bg-[#004c3f] text-white"
               : "bg-[#008060] hover:bg-[#004c3f] text-white"
           }`}
         >
-          Learn More
+          {t("app.card.learnMore@@Learn More")}
         </Link>
       </div>
     </div>

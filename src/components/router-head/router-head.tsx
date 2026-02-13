@@ -8,11 +8,23 @@ export const RouterHead = component$(() => {
   const head = useDocumentHead();
   const loc = useLocation();
 
+  const pathname = loc.url.pathname;
+  const locale = loc.params.locale;
+  const baseUrl = loc.url.origin;
+  const hrefEn = locale ? `${baseUrl}${pathname.replace(new RegExp(`^/${locale}`), "/en") || "/en"}` : `${baseUrl}/en`;
+  const hrefRu = locale ? `${baseUrl}${pathname.replace(new RegExp(`^/${locale}`), "/ru") || "/ru"}` : `${baseUrl}/ru`;
+
   return (
     <>
       <title>{head.title}</title>
 
       <link rel="canonical" href={loc.url.href} />
+      {locale && (
+        <>
+          <link rel="alternate" hreflang="en" href={hrefEn} />
+          <link rel="alternate" hreflang="ru" href={hrefRu} />
+        </>
+      )}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 

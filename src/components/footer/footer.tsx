@@ -1,8 +1,13 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { Link, useLocation } from "@builder.io/qwik-city";
+import { inlineTranslate } from "qwik-speak";
 import { contact } from "~/config/contact";
 
 export default component$(() => {
+  const t = inlineTranslate();
+  const location = useLocation();
+  const locale = location.params.locale;
+  const base = locale ? `/${locale}` : "";
   const currentYear = new Date().getFullYear();
 
   const whatsappUrl = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}?text=Hello! I'm interested in booking at White Flower Guest.`;
@@ -16,44 +21,44 @@ export default component$(() => {
             <h3 class="mb-4 text-xl font-bold text-[#008060]">
               White Flower Guest
             </h3>
-            <p class="mb-4 text-gray-300">{contact.beachProximity}</p>
+            <p class="mb-4 text-gray-300">{t("contact.beachProximity@@Very close to Unawatuna Beach")}</p>
             <p class="text-gray-300">{contact.address}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#008060]">Quick Links</h3>
+            <h3 class="mb-4 text-xl font-bold text-[#008060]">{t("app.footer.quickLinks@@Quick Links")}</h3>
             <ul class="space-y-2">
               <li>
                 <Link
-                  href="/"
+                  href={base || "/"}
                   class="text-gray-300 transition-colors hover:text-[#36CFC9]"
                 >
-                  Home
+                  {t("app.nav.home@@Home")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/rooms"
+                  href={`${base}/rooms`}
                   class="text-gray-300 transition-colors hover:text-[#36CFC9]"
                 >
-                  Rooms
+                  {t("app.nav.rooms@@Rooms")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/services"
+                  href={`${base}/services`}
                   class="text-gray-300 transition-colors hover:text-[#36CFC9]"
                 >
-                  Services
+                  {t("app.nav.services@@Services")}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href={`${base}/contact`}
                   class="text-gray-300 transition-colors hover:text-[#36CFC9]"
                 >
-                  Contact
+                  {t("app.nav.contact@@Contact")}
                 </Link>
               </li>
             </ul>
@@ -61,7 +66,7 @@ export default component$(() => {
 
           {/* Contact Info */}
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#008060]">Contact Us</h3>
+            <h3 class="mb-4 text-xl font-bold text-[#008060]">{t("app.footer.contactUs@@Contact Us")}</h3>
             <ul class="space-y-2 text-gray-300">
               <li>
                 <a
@@ -89,7 +94,7 @@ export default component$(() => {
                   rel="noopener noreferrer"
                   class="transition-colors hover:text-[#36CFC9]"
                 >
-                  🔗 Book on Booking.com
+                  🔗 {t("app.footer.bookBooking@@Book on Booking.com")}
                 </a>
               </li>
             </ul>
@@ -99,7 +104,7 @@ export default component$(() => {
         {/* Copyright */}
         <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>
-            © {currentYear} White Flower Guest. All rights reserved. |{" "}
+            © {currentYear} White Flower Guest. {t("app.footer.copyright@@All rights reserved.")} |{" "}
             {contact.location}
           </p>
         </div>
