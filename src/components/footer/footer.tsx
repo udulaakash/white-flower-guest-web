@@ -21,13 +21,17 @@ export default component$(() => {
             <h3 class="mb-4 text-xl font-bold text-[#008060]">
               White Flower Guest
             </h3>
-            <p class="mb-4 text-gray-300">{t("contact.beachProximity@@Very close to Unawatuna Beach")}</p>
+            <p class="mb-4 text-gray-300">
+              {t("contact.beachProximity@@Very close to Unawatuna Beach")}
+            </p>
             <p class="text-gray-300">{contact.address}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#008060]">{t("app.footer.quickLinks@@Quick Links")}</h3>
+            <h3 class="mb-4 text-xl font-bold text-[#008060]">
+              {t("app.footer.quickLinks@@Quick Links")}
+            </h3>
             <ul class="space-y-2">
               <li>
                 <Link
@@ -66,7 +70,9 @@ export default component$(() => {
 
           {/* Contact Info */}
           <div>
-            <h3 class="mb-4 text-xl font-bold text-[#008060]">{t("app.footer.contactUs@@Contact Us")}</h3>
+            <h3 class="mb-4 text-xl font-bold text-[#008060]">
+              {t("app.footer.contactUs@@Contact Us")}
+            </h3>
             <ul class="space-y-2 text-gray-300">
               <li>
                 <a
@@ -104,7 +110,8 @@ export default component$(() => {
         {/* Copyright */}
         <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
           <p>
-            © {currentYear} White Flower Guest. {t("app.footer.copyright@@All rights reserved.")} |{" "}
+            © {currentYear} White Flower Guest.{" "}
+            {t("app.footer.copyright@@All rights reserved.")} |{" "}
             {contact.location}
           </p>
         </div>

@@ -15,10 +15,12 @@ export default component$(() => {
   const roomType = location.params.roomType;
   const base = locale ? `/${locale}` : "";
 
-  const roomResource = useResource$<ReturnType<typeof getRoomById>>(async ({ track }) => {
-    track(() => roomType);
-    return getRoomById(roomType);
-  });
+  const roomResource = useResource$<ReturnType<typeof getRoomById>>(
+    async ({ track }) => {
+      track(() => roomType);
+      return getRoomById(roomType);
+    },
+  );
 
   return (
     <Layout>
@@ -34,9 +36,13 @@ export default component$(() => {
         onRejected={() => (
           <div class="container mx-auto px-4 py-16">
             <div class="text-center">
-              <h1 class="mb-4 text-3xl font-bold">{t("app.rooms.roomNotFound@@Room Not Found")}</h1>
+              <h1 class="mb-4 text-3xl font-bold">
+                {t("app.rooms.roomNotFound@@Room Not Found")}
+              </h1>
               <p class="mb-8 text-gray-600 dark:text-gray-300">
-                {t("app.rooms.roomNotFoundText@@The room you're looking for doesn't exist.")}
+                {t(
+                  "app.rooms.roomNotFoundText@@The room you're looking for doesn't exist.",
+                )}
               </p>
               <a
                 href={`${base}/rooms`}
@@ -52,9 +58,13 @@ export default component$(() => {
             return (
               <div class="container mx-auto px-4 py-16">
                 <div class="text-center">
-                  <h1 class="mb-4 text-3xl font-bold">{t("app.rooms.roomNotFound@@Room Not Found")}</h1>
+                  <h1 class="mb-4 text-3xl font-bold">
+                    {t("app.rooms.roomNotFound@@Room Not Found")}
+                  </h1>
                   <p class="mb-8 text-gray-600 dark:text-gray-300">
-                    {t("app.rooms.roomNotFoundText@@The room you're looking for doesn't exist.")}
+                    {t(
+                      "app.rooms.roomNotFoundText@@The room you're looking for doesn't exist.",
+                    )}
                   </p>
                   <a
                     href={`${base}/rooms`}
@@ -68,10 +78,14 @@ export default component$(() => {
           }
 
           const name = t(`rooms.${room.id}.name@@${room.name}`);
-          const description = t(`rooms.${room.id}.description@@${room.description}`);
+          const description = t(
+            `rooms.${room.id}.description@@${room.description}`,
+          );
           const capacity = t(`rooms.${room.id}.capacity@@${room.capacity}`);
-          const size = room.size ? t(`rooms.${room.id}.size@@${room.size}`) : null;
-          const whatsappUrl = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}?text=Hello! I'm interested in booking a ${name} at White Flower Guest.`;
+          const size = room.size
+            ? t(`rooms.${room.id}.size@@${room.size}`)
+            : null;
+          // const whatsappUrl = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}?text=Hello! I'm interested in booking a ${name} at White Flower Guest.`;
 
           return (
             <>
@@ -80,7 +94,9 @@ export default component$(() => {
                   <h1 class="mb-2 text-4xl font-bold md:text-5xl">{name}</h1>
                   <p class="text-lg text-gray-100">
                     {room.count}{" "}
-                    {room.count === 1 ? t("app.rooms.roomAvailable@@Room Available") : t("app.rooms.roomsAvailable@@Rooms Available")}
+                    {room.count === 1
+                      ? t("app.rooms.roomAvailable@@Room Available")
+                      : t("app.rooms.roomsAvailable@@Rooms Available")}
                   </p>
                 </div>
               </section>
@@ -91,27 +107,41 @@ export default component$(() => {
                       <ImageGallery images={room.images} alt={name} />
                     </div>
                     <div>
-                      <h2 class="mb-4 text-3xl font-bold text-gray-800 dark:text-white">{name}</h2>
-                      <p class="mb-6 text-lg text-gray-600 dark:text-gray-300">{description}</p>
+                      <h2 class="mb-4 text-3xl font-bold text-gray-800 dark:text-white">
+                        {name}
+                      </h2>
+                      <p class="mb-6 text-lg text-gray-600 dark:text-gray-300">
+                        {description}
+                      </p>
                       <div class="mb-6 space-y-3">
                         <div class="flex items-center space-x-3">
                           <span class="text-2xl">👥</span>
                           <span class="text-gray-700 dark:text-gray-200">
-                            <strong>{t("app.rooms.capacity@@Capacity")}:</strong> {capacity}
+                            <strong>
+                              {t("app.rooms.capacity@@Capacity")}:
+                            </strong>{" "}
+                            {capacity}
                           </span>
                         </div>
                         {size && (
                           <div class="flex items-center space-x-3">
                             <span class="text-2xl">📐</span>
                             <span class="text-gray-700 dark:text-gray-200">
-                              <strong>{t("app.rooms.size@@Size")}:</strong> {size}
+                              <strong>{t("app.rooms.size@@Size")}:</strong>{" "}
+                              {size}
                             </span>
                           </div>
                         )}
                         <div class="flex items-center space-x-3">
                           <span class="text-2xl">🏠</span>
                           <span class="text-gray-700 dark:text-gray-200">
-                            <strong>{t("app.rooms.roomsAvailableLabel@@Rooms Available")}:</strong> {room.count}
+                            <strong>
+                              {t(
+                                "app.rooms.roomsAvailableLabel@@Rooms Available",
+                              )}
+                              :
+                            </strong>{" "}
+                            {room.count}
                           </span>
                         </div>
                       </div>
@@ -126,7 +156,11 @@ export default component$(() => {
                               class="flex items-center space-x-2 text-gray-700 dark:text-gray-200"
                             >
                               <span class="text-[#008060]">✓</span>
-                              <span>{t(`rooms.${room.id}.feature${i}@@${room.features[i] ?? ""}`)}</span>
+                              <span>
+                                {t(
+                                  `rooms.${room.id}.feature${i}@@${room.features[i] ?? ""}`,
+                                )}
+                              </span>
                             </div>
                           ))}
                         </div>
@@ -138,9 +172,11 @@ export default component$(() => {
                           rel="noopener noreferrer"
                           class="block w-full rounded-lg bg-[#008060] py-4 text-center text-lg font-semibold text-white transition-colors hover:bg-[#004c3f]"
                         >
-                          {t("app.rooms.checkAvailability@@Check Availability on Booking.com")}
+                          {t(
+                            "app.rooms.checkAvailability@@Check Availability on Booking.com",
+                          )}
                         </a>
-                        <a
+                        {/* <a
                           href={whatsappUrl}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -148,7 +184,7 @@ export default component$(() => {
                         >
                           <span>💬</span>
                           <span>{t("app.home.hero.bookWhatsApp@@Book via WhatsApp")}</span>
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>
@@ -169,7 +205,9 @@ export const head: DocumentHead = ({ params }) => {
 
   if (!room) {
     return {
-      title: t("app.head.roomNotFoundTitle@@Room Not Found - White Flower Guest"),
+      title: t(
+        "app.head.roomNotFoundTitle@@Room Not Found - White Flower Guest",
+      ),
     };
   }
 

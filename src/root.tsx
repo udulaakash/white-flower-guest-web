@@ -4,10 +4,12 @@ import { useQwikSpeak } from "qwik-speak";
 import { RouterHead } from "./components/router-head/router-head";
 import { config } from "./speak-config";
 import { translationFn } from "./speak-functions";
+import { inject } from "@vercel/analytics";
 
 import "./global.css";
 
 export default component$(() => {
+  inject();
   useQwikSpeak({ config, translationFn });
 
   return (

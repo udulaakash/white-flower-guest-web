@@ -29,7 +29,7 @@ export const services: Service[] = [
       "Flexible timing",
       "Competitive rates",
     ],
-    pricing: "18,000 LKR per vehicle",
+    pricing: "17,000 LKR per vehicle",
     images: ["/images/services/airport-transfer.jpg"],
   },
   {
@@ -51,7 +51,7 @@ export const services: Service[] = [
       "Transportation included",
       "Customizable itineraries",
     ],
-    pricing: "Starting from $XX per person",
+    pricing: "Contact us for package pricing",
     images: ["/images/services/one-day-tour.jpg"],
   },
   {
@@ -76,48 +76,48 @@ export const services: Service[] = [
     pricing: "Contact us for package pricing",
     images: ["/images/services/multi-day-tour.jpg"],
   },
-  {
-    id: "diving",
-    name: "Diving Services",
-    description:
-      "Explore the underwater world of Unawatuna with our professional diving services. Suitable for both beginners and experienced divers.",
-    detailedDescription:
-      "Unawatuna offers excellent diving opportunities with its clear waters and diverse marine life. We provide diving services including equipment rental, guided dives, and PADI certification courses. Whether you're a first-time diver or looking to explore deeper waters, our certified instructors will ensure a safe and memorable diving experience.",
-    highlight: false,
-    icon: "🤿",
-    features: [
-      "Equipment rental",
-      "Guided dives",
-      "PADI certification courses",
-      "Beginner-friendly",
-      "Experienced instructors",
-      "Multiple dive sites",
-      "Safety equipment included",
-    ],
-    pricing: "Contact us for dive packages",
-    images: ["/images/services/diving.jpg"],
-  },
-  {
-    id: "boat-safari",
-    name: "Boat Safari",
-    description:
-      "Experience the natural beauty of Sri Lanka's waterways with our exciting boat safari tours. Perfect for wildlife enthusiasts and nature lovers.",
-    detailedDescription:
-      "Join us for an unforgettable boat safari experience through Sri Lanka's rivers and lagoons. Spot diverse birdlife, crocodiles, and other wildlife while enjoying the serene beauty of the waterways. Our boat safaris are conducted by experienced guides who will help you identify the local flora and fauna. Ideal for photography enthusiasts and nature lovers.",
-    highlight: false,
-    icon: "🚤",
-    features: [
-      "Wildlife spotting",
-      "Bird watching",
-      "Photography opportunities",
-      "Experienced guides",
-      "Safe boats",
-      "Multiple safari options",
-      "Morning and evening tours",
-    ],
-    pricing: "Contact us for safari pricing",
-    images: ["/images/services/boat-safari.jpg"],
-  },
+  // {
+  //   id: "diving",
+  //   name: "Diving Services",
+  //   description:
+  //     "Explore the underwater world of Unawatuna with our professional diving services. Suitable for both beginners and experienced divers.",
+  //   detailedDescription:
+  //     "Unawatuna offers excellent diving opportunities with its clear waters and diverse marine life. We provide diving services including equipment rental, guided dives, and PADI certification courses. Whether you're a first-time diver or looking to explore deeper waters, our certified instructors will ensure a safe and memorable diving experience.",
+  //   highlight: false,
+  //   icon: "🤿",
+  //   features: [
+  //     "Equipment rental",
+  //     "Guided dives",
+  //     "PADI certification courses",
+  //     "Beginner-friendly",
+  //     "Experienced instructors",
+  //     "Multiple dive sites",
+  //     "Safety equipment included",
+  //   ],
+  //   pricing: "Contact us for dive packages",
+  //   images: ["/images/services/diving.jpg"],
+  // },
+  // {
+  //   id: "boat-safari",
+  //   name: "Boat Safari",
+  //   description:
+  //     "Experience the natural beauty of Sri Lanka's waterways with our exciting boat safari tours. Perfect for wildlife enthusiasts and nature lovers.",
+  //   detailedDescription:
+  //     "Join us for an unforgettable boat safari experience through Sri Lanka's rivers and lagoons. Spot diverse birdlife, crocodiles, and other wildlife while enjoying the serene beauty of the waterways. Our boat safaris are conducted by experienced guides who will help you identify the local flora and fauna. Ideal for photography enthusiasts and nature lovers.",
+  //   highlight: false,
+  //   icon: "🚤",
+  //   features: [
+  //     "Wildlife spotting",
+  //     "Bird watching",
+  //     "Photography opportunities",
+  //     "Experienced guides",
+  //     "Safe boats",
+  //     "Multiple safari options",
+  //     "Morning and evening tours",
+  //   ],
+  //   pricing: "Contact us for safari pricing",
+  //   images: ["/images/services/boat-safari.jpg"],
+  // },
 ];
 
 export function getServiceById(id: string): Service | undefined {

@@ -1,14 +1,14 @@
 import { component$ } from "@builder.io/qwik";
 import { Link, useLocation } from "@builder.io/qwik-city";
 import { inlineTranslate } from "qwik-speak";
-import { contact } from "~/config/contact";
+// import { contact } from "~/config/contact";
 
 export default component$(() => {
   const t = inlineTranslate();
   const location = useLocation();
   const locale = location.params.locale;
   const base = locale ? `/${locale}` : "";
-  const whatsappUrl = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}?text=Hello! I'm interested in booking at White Flower Guest.`;
+  // const whatsappUrl = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}?text=Hello! I'm interested in booking at White Flower Guest.`;
 
   return (
     <section class="relative h-[600px] overflow-hidden bg-linear-to-br from-[#004c3f] to-[#008060] md:h-[700px]">
@@ -23,7 +23,9 @@ export default component$(() => {
             {t("contact.beachProximity@@Very close to Unawatuna Beach")}
           </p>
           <p class="mb-8 text-lg text-gray-100 drop-shadow-md md:text-xl">
-            {t("app.home.hero.subtitle@@Experience the perfect blend of comfort and tropical charm in the heart of Unawatuna, Sri Lanka")}
+            {t(
+              "app.home.hero.subtitle@@Experience the perfect blend of comfort and tropical charm in the heart of Unawatuna, Sri Lanka",
+            )}
           </p>
           <div class="flex flex-col gap-4 sm:flex-row">
             <Link
@@ -32,7 +34,7 @@ export default component$(() => {
             >
               {t("app.home.hero.viewRooms@@View Our Rooms")}
             </Link>
-            <a
+            {/* <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -40,7 +42,7 @@ export default component$(() => {
             >
               <span>💬</span>
               <span>{t("app.home.hero.bookWhatsApp@@Book via WhatsApp")}</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

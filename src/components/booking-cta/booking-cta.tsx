@@ -4,7 +4,7 @@ import { contact } from "~/config/contact";
 
 export default component$(() => {
   const t = inlineTranslate();
-  const whatsappUrl = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}?text=Hello! I'm interested in booking at White Flower Guest.`;
+  // const whatsappUrl = `https://wa.me/${contact.whatsapp.replace(/[^0-9]/g, "")}?text=Hello! I'm interested in booking at White Flower Guest.`;
 
   return (
     <section class="bg-linear-to-r from-[#004c3f] to-[#008060] py-16">
@@ -14,7 +14,9 @@ export default component$(() => {
             {t("app.bookingCta.title@@Ready to Book Your Stay?")}
           </h2>
           <p class="mb-8 text-xl text-gray-100">
-            {t("app.bookingCta.subtitle@@Check availability on Booking.com or contact us directly via WhatsApp for personalized service")}
+            {t(
+              "app.bookingCta.subtitle@@Check availability on Booking.com or contact us directly via WhatsApp for personalized service",
+            )}
           </p>
 
           <div class="flex flex-col justify-center gap-4 sm:flex-row">
@@ -26,11 +28,15 @@ export default component$(() => {
               class="flex items-center justify-center space-x-2 rounded-lg bg-white px-8 py-4 text-lg font-semibold text-[#008060] shadow-lg transition-colors hover:bg-gray-100"
             >
               <span>🔗</span>
-              <span>{t("app.bookingCta.checkAvailability@@Check Availability on Booking.com")}</span>
+              <span>
+                {t(
+                  "app.bookingCta.checkAvailability@@Check Availability on Booking.com",
+                )}
+              </span>
             </a>
 
             {/* WhatsApp Button */}
-            <a
+            {/* <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -38,11 +44,13 @@ export default component$(() => {
             >
               <span>💬</span>
               <span>{t("app.bookingCta.bookWhatsApp@@Book via WhatsApp")}</span>
-            </a>
+            </a> */}
           </div>
 
           <p class="mt-6 text-sm text-gray-200">
-            {t("app.bookingCta.directNote@@Direct bookings via WhatsApp may include special offers and personalized service")}
+            {t(
+              "app.bookingCta.directNote@@Direct bookings via WhatsApp may include special offers and personalized service",
+            )}
           </p>
         </div>
       </div>
